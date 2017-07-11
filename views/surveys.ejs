@@ -1,0 +1,27 @@
+<% include _header %>
+
+    <div class="container">
+        
+        <div class="page-header text-center">
+            
+            <h1>Benchmark Voting App</h1>
+            
+            <div>
+                Welcome, <%= user.email %>
+                <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+            </div>    
+            
+        </div>
+
+
+        <div class="list-group">
+            <a href="/display?id=8761387" class="list-group-item list-group-item-action">Survey 1</a>
+            <a href="#" class="list-group-item list-group-item-action">Survey 2</a>
+            <a href="#" class="list-group-item list-group-item-action">Survey 3</a>
+        </div>
+        
+        <a href="/create"><div class="btn btn-default">Create a new survey</div></a>
+
+    </div>
+    
+<% include _footer %>
