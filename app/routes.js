@@ -43,10 +43,16 @@ module.exports = function(app, passport) {
     });
     
     
-    //DISPLAY====================================
+    //DISPLAY=====================================
     app.get("/display", function(req, res) {
         res.send(req.query.id);
     })
+    
+    
+    //CREATE======================================
+    app.get("/create", function(req, res) {
+        res.render("create.ejs");
+    });
     
     
     
