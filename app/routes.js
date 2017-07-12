@@ -58,7 +58,7 @@ module.exports = function(app, passport) {
         //get correct survey from db
         displaySurvey(req.query.id, function(data) {
             res.render("display.ejs", {
-                data: data
+                data: JSON.stringify(data)
             });
         });
     });

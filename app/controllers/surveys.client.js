@@ -13,4 +13,3 @@ $(document).ready(function() {
 
 
 
-//<a href="/display?id=8761387 " class="list-group-item list-group-item-action">Survey 1</a>
