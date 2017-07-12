@@ -1,5 +1,6 @@
 //app/routes.js
-var createSurvey = require("../config/survey.js");
+var createSurvey = require("../config/createSurvey.js");
+var listSurveys = require("../config/listSurveys.js");
 module.exports = function(app, passport) {
     
     
@@ -38,9 +39,16 @@ module.exports = function(app, passport) {
     
     //SURVEYS=====================================
     app.get("/surveys", function(req, res) {
-        res.render("surveys.ejs", {
-            user: req.user
+        
+        listSurveys(function(data) {
+            console.log(data);
+            res.render("surveys.ejs", {
+                user: req.user,
+                data: JSON.stringify(data)
+            });                
+            
         });
+
     });
     
     
