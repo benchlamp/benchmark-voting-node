@@ -1,4 +1,5 @@
 //app/routes.js
+var createSurvey = require("../config/survey.js");
 module.exports = function(app, passport) {
     
     
@@ -36,7 +37,7 @@ module.exports = function(app, passport) {
     
     
     //SURVEYS=====================================
-    app.get("/surveys", isLoggedIn, function(req, res) {
+    app.get("/surveys", function(req, res) {
         res.render("surveys.ejs", {
             user: req.user
         });
@@ -51,10 +52,16 @@ module.exports = function(app, passport) {
     
     //CREATE======================================
     app.get("/create", function(req, res) {
-        res.render("create.ejs");
+        res.render("create.ejs", {
+            user: req.user
+        });
     });
     
-    
+    app.post("/create", function(req, res) {
+        createSurvey(req.body);
+        res.redirect("/surveys");
+        
+    })
     
     //LOGOUT======================================
     app.get("/logout", function(req, res) {

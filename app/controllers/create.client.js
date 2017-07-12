@@ -7,7 +7,7 @@ var optionCounter = 3;
             
                 '<div class="form-group">' +
                     '<label>Option ' + optionCounter + '</label>' +
-                    '<input type="text" class="form-control" name="option-' + optionCounter + '">' +
+                    '<input type="text" class="form-control" name="option-' + optionCounter + '" placeholder="Option Name">' +
                 '</div>'
             
             
