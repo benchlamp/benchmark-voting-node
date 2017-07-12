@@ -1,6 +1,7 @@
 //app/routes.js
 var createSurvey = require("../config/createSurvey.js");
 var listSurveys = require("../config/listSurveys.js");
+var displaySurvey = require("../config/displaySurvey.js")
 module.exports = function(app, passport) {
     
     
@@ -54,8 +55,13 @@ module.exports = function(app, passport) {
     
     //DISPLAY=====================================
     app.get("/display", function(req, res) {
-        res.send(req.query.id);
-    })
+        //get correct survey from db
+        displaySurvey(req.query.id, function(data) {
+            res.render("display.ejs", {
+                data: data
+            });
+        });
+    });
     
     
     //CREATE======================================
