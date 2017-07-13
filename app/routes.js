@@ -1,7 +1,8 @@
 //app/routes.js
 var createSurvey = require("../config/createSurvey.js");
 var listSurveys = require("../config/listSurveys.js");
-var displaySurvey = require("../config/displaySurvey.js")
+var displaySurvey = require("../config/displaySurvey.js");
+var vote = require("../config/vote.js");
 module.exports = function(app, passport) {
     
     
@@ -62,6 +63,20 @@ module.exports = function(app, passport) {
             });
         });
     });
+    
+    
+    app.post("/display", function(req, res) {
+        vote(req.body.id, req.body.voteID, function(response) {
+            if (response) {
+                res.send("response stuff");                
+            }
+        }) 
+        
+
+
+
+    })
+    
     
     
     //CREATE======================================
