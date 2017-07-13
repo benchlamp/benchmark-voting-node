@@ -68,7 +68,7 @@ module.exports = function(app, passport) {
     app.post("/display", function(req, res) {
         vote(req.body.id, req.body.voteID, function(response) {
             if (response) {
-                res.send("response stuff");                
+                res.send(true);                
             }
         }) 
         

@@ -8,13 +8,13 @@ $(document).ready(function() {
     var prepData = [];
     
     keys.forEach(function(key) {
-        var voteOption = Object.keys(voteData[key])[0];
-        var voteResult = voteData[key][voteOption];
-        prepData.push([voteOption, voteResult]);
+        var voteName = Object.keys(voteData[key])[0];
+        var voteResult = voteData[key][voteName];
+        prepData.push([voteName, voteResult]);
         
         //CREATE VOTE BUTTONS===================================================
         $("#vote-buttons").append(
-                "<div id='" + key + "' class='list-group-item list-group-item-action btn vote-btn'>" + voteOption + "</div>"
+                "<div id='" + key + "." + voteName + "' class='list-group-item list-group-item-action btn vote-btn'>" + voteName + "</div>"
             )
         
     })
@@ -77,7 +77,7 @@ $(document).ready(function() {
                 voteID: event.target.id
             },
             success: function(response) {
-                console.log(response)
+                if (response) createChart();
             }
         })
         
