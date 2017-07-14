@@ -2,11 +2,9 @@
 
 $(document).ready(function() {
     
-    
 //==FORMAT DATA FOR HIGHCHARTS==================================================
     
     function jsonToHighchart(json) {
-    
         var result = [];
         
         for (var i = 0; i < json.length; i++) {
@@ -14,7 +12,6 @@ $(document).ready(function() {
             var val = json[i][key]
             result.push([key, val]);
         };
-            console.log(result);
             return result;
     } ; 
 
@@ -39,7 +36,7 @@ $(document).ready(function() {
 
 //==CREATE CHART================================================================
     
-    var chart = {
+    var canvas = {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false
@@ -70,19 +67,18 @@ $(document).ready(function() {
     }];
     
     var json = {};
-    json.chart = chart;
+    json.canvas = canvas;
     json.title = title;
     json.tooltip = tooltip;
     json.series = series;
     json.plotOptions = plotOptions;
-    $("#container").highcharts(json);
-    
-    
+
+    var chart = Highcharts.chart("container", json);
+
     
 //==VOTE FUNCTION===============================================================
     
     $(".vote-btn").click(function(event) {
-          console.log("clicked");      
         $.ajax({
             url: "/display",
             type: "POST",
@@ -91,7 +87,7 @@ $(document).ready(function() {
                 voteID: event.target.id
             },
             success: function(response) {
-                chart.series[0].setData(jsonToHighchart(response));
+                chart.series[0].setData(jsonToHighchart(response.data));
             }
         })
         
