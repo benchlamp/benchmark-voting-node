@@ -68,7 +68,8 @@ module.exports = function(app, passport) {
     app.post("/display", function(req, res) {
         vote(req.body.id, req.body.voteID, function(response) {
             if (response) {
-                res.send(true);                
+                console.log("break routes")
+                res.json(response);                
             }
         }) 
         

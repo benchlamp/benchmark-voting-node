@@ -13,7 +13,7 @@ module.exports = function(id, vote, callback) {
         {upsert: true},
         function(err, data) {
             if (err) console.error(err);
-            callback(true);
+            callback(data);
         }
     )
 
