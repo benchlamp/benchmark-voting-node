@@ -36,13 +36,17 @@ $(document).ready(function() {
 
 //==CREATE CHART================================================================
 
-    var canvas = {
-        plotBackgroundColor: null,
+    var chart = {
+        plotBackgroundColor: "#f7f9f8",
         plotBorderWidth: null,
-        plotShadow: false
+        plotShadow: false,
+        backgroundColor: "#f7f9f8"
     };
     var title = {
-        text: data.name
+        text: data.name,
+        style: {
+            fontSize: "30px"
+        }
     };
     var tooltip = {
         pointFormat: "{series.name}: <b>{point.y}</b>"
@@ -68,14 +72,14 @@ $(document).ready(function() {
     }];
     
     var json = {};
-    json.canvas = canvas;
+    json.chart = chart;
     json.title = title;
     json.tooltip = tooltip;
     json.series = series;
     json.plotOptions = plotOptions;
 
     var chart = Highcharts.chart("container", json);
-    console.log(chart.series)
+
     
 //==VOTE FUNCTION===============================================================
     
