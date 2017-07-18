@@ -52,12 +52,13 @@ $(document).ready(function() {
             allowPointSelect: true,
             cursor: "pointer",
             dataLabels: {
-                enabled: true,
+                enabled: false,
                 format: "{point.name}: <b>{point.y}</b>",
                 style: {
                     color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                 }
-            }
+            },
+            showInLegend: true
         }
     };
     var series = [{
