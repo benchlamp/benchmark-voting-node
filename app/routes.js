@@ -40,10 +40,9 @@ module.exports = function(app, passport) {
     
     
     //SURVEYS=====================================
-    app.get("/surveys", function(req, res) {
+    app.get("/surveys", isLoggedIn, function(req, res) {
         
         listSurveys(function(data) {
-            console.log(data);
             res.render("surveys.ejs", {
                 user: req.user,
                 data: JSON.stringify(data)
@@ -55,17 +54,18 @@ module.exports = function(app, passport) {
     
     
     //DISPLAY=====================================
-    app.get("/display", function(req, res) {
+    app.get("/display", isLoggedIn, function(req, res) {
         //get correct survey from db
         displaySurvey(req.query.id, function(data) {
             res.render("display.ejs", {
+                user: req.user,                
                 data: JSON.stringify(data)
             });
         });
     });
     
     
-    app.post("/display", function(req, res) {
+    app.post("/display", isLoggedIn, function(req, res) {
         vote(req.body.id, req.body.voteID, function(response) {
             if (response) {
                 console.log("break routes")
@@ -81,7 +81,7 @@ module.exports = function(app, passport) {
     
     
     //CREATE======================================
-    app.get("/create", function(req, res) {
+    app.get("/create", isLoggedIn, function(req, res) {
         res.render("create.ejs", {
             user: req.user
         });

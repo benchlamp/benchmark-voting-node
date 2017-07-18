@@ -35,14 +35,14 @@ $(document).ready(function() {
     
 
 //==CREATE CHART================================================================
-    
+
     var canvas = {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false
     };
     var title = {
-        test: data.name
+        text: data.name
     };
     var tooltip = {
         pointFormat: "{series.name}: <b>{point.y}</b>"
@@ -53,7 +53,7 @@ $(document).ready(function() {
             cursor: "pointer",
             dataLabels: {
                 enabled: true,
-                format: "{series.name}: <b>{point.y}</b>",
+                format: "{point.name}: <b>{point.y}</b>",
                 style: {
                     color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                 }
@@ -74,7 +74,7 @@ $(document).ready(function() {
     json.plotOptions = plotOptions;
 
     var chart = Highcharts.chart("container", json);
-
+    console.log(chart.series)
     
 //==VOTE FUNCTION===============================================================
     
