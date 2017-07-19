@@ -1,9 +1,13 @@
- *, h1 {
-            font-family: verdana;
+ 
+          
+          body {
+            background-color: #EBF0ED;
+            font-family: 'Hind', sans-serif;
+            font-size: 18px;
           }
      
-           body        { 
-           background-color: #f7f9f8;
+           .container        { 
+           background-color: #F8F8FF;
           }
           
 
@@ -21,6 +25,7 @@
               padding-top: 10px; 
           }
             .page-header { 
+            position: relative;
             text-align: right;
             margin: 0px;
             padding: 10% 20px;
@@ -30,8 +35,16 @@
             border: none;
           }
           
-          .page-header > a {
+          .page-header > h1 {
+            font-size: 60px;
+            font-family: 'Audiowide', cursive !important;
+          }
+          
+          .page-header > h4 > a {
             color: white;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
           }
           
           .create {
@@ -43,7 +56,7 @@
           .create,
           .create > a > .btn {
             text-align: right;
-            background-color: #003329;
+            background-color: #00cca3;
             color: white;
             padding: 5px;
             border: none;
@@ -80,9 +93,14 @@
 
           .well {
             vertical-align: middle;
+            background-color: #fff;
           }
           .fa-info-circle {
             font-size: 20px;
             margin-right: 10px;
             vertical-align: middle;
+          }
+          
+          .copywrite {
+            margin-right: 10px;
           }

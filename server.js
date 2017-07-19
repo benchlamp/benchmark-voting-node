@@ -12,10 +12,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-//var configDB = require('./config/database.js');
+//var configDB = require('./config/database.js'); //(Cloud 9)
 
-mongoose.connect(process.env.CONFIGDB); // connect to our database
-//mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(process.env.CONFIGDB); // connect to our database (Heroku)
+//mongoose.connect(configDB.url); // connect to our database (Cloud 9)
 
 mongoose.connection.once("open", function() {
     console.log("db connected!");
