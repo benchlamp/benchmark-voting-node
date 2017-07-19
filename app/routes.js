@@ -8,7 +8,7 @@ module.exports = function(app, passport) {
     
     //HOME========================================
     app.get("/", function(req, res) {
-        res.render("index.ejs");
+        res.redirect("/surveys");
     })
     
     
@@ -40,8 +40,7 @@ module.exports = function(app, passport) {
     
     
     //SURVEYS=====================================
-    app.get("/surveys", isLoggedIn, function(req, res) {
-        
+    app.get("/surveys", function(req, res) {
         listSurveys(function(data) {
             res.render("surveys.ejs", {
                 user: req.user,
@@ -54,7 +53,7 @@ module.exports = function(app, passport) {
     
     
     //DISPLAY=====================================
-    app.get("/display", isLoggedIn, function(req, res) {
+    app.get("/display", function(req, res) {
         //get correct survey from db
         displaySurvey(req.query.id, function(data) {
             res.render("display.ejs", {
@@ -65,7 +64,7 @@ module.exports = function(app, passport) {
     });
     
     
-    app.post("/display", isLoggedIn, function(req, res) {
+    app.post("/display", function(req, res) {
         vote(req.body.id, req.body.voteID, function(response) {
             if (response) {
                 console.log("break routes")

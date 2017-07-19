@@ -1,0 +1,88 @@
+ *, h1 {
+            font-family: verdana;
+          }
+     
+           body        { 
+           background-color: #f7f9f8;
+          }
+          
+
+          .navbar {
+            position: relative;
+            margin-bottom: 0;
+            background-color: #00cca3;
+            border: none;
+            border-radius: 0;
+          }
+          .navbar-header > .navbar-brand {
+            color: white;
+          }
+            form        { 
+              padding-top: 10px; 
+          }
+            .page-header { 
+            text-align: right;
+            margin: 0px;
+            padding: 10% 20px;
+            background-image: url("/img/bgimg.jpg");
+            background-size:100% auto;
+            color: white;
+            border: none;
+          }
+          
+          .page-header > a {
+            color: white;
+          }
+          
+          .create {
+            min-height: 40px;
+            margin-bottom: 10px;
+            line-height: 40px;
+          }
+          
+          .create,
+          .create > a > .btn {
+            text-align: right;
+            background-color: #003329;
+            color: white;
+            padding: 5px;
+            border: none;
+          }
+          
+          .create > a > .btn:hover {
+            background-color: #216859;
+          }
+          
+          .list-group-item {
+            text-align: center;
+            margin: 10px auto;
+          }
+          
+          
+          
+          .fa-github {
+            float: right;
+            color: black;
+            font-size: 26px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2%;
+          }
+          
+          .fa-github:hover {
+            color: orange;
+          }
+          
+          .logout {
+            text-align: right;
+          }
+
+          .well {
+            vertical-align: middle;
+          }
+          .fa-info-circle {
+            font-size: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+          }

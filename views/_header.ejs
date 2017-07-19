@@ -8,87 +8,8 @@
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <style>
-          
-          
-          *, h1 {
-            font-family: verdana;
-          }
-     
-           body        { 
-           background-color: #f7f9f8;
-          }
-          
-
-          .navbar {
-            position: relative;
-            margin-bottom: 0;
-            background-color: #00cca3;
-            border: none;
-            border-radius: 0;
-          }
-          .navbar-header > .navbar-brand {
-            color: white;
-          }
-            form        { 
-              padding-top: 10px; 
-          }
-            .page-header { 
-            text-align: right;
-            margin: 0px;
-            padding: 10% 20px;
-            background-image: url("/img/bgimg.jpg");
-            background-size:100% auto;
-            color: white;
-            border: none;
-          }
-          
-          .create {
-            min-height: 40px;
-            margin-bottom: 10px;
-            line-height: 40px;
-          }
-          
-          .create,
-          .create > a > .btn {
-            text-align: right;
-            background-color: #003329;
-            color: white;
-            padding: 5px;
-            border: none;
-          }
-          
-          .create > a > .btn:hover {
-            background-color: #216859;
-          }
-          
-          .list-group-item {
-            text-align: center;
-            margin: 10px auto;
-          }
-          
-          
-          
-          .fa-github {
-            float: right;
-            color: black;
-            font-size: 26px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 2%;
-          }
-          
-          .fa-github:hover {
-            color: orange;
-          }
-          
-          .logout {
-            text-align: right;
-          }
-      
-          
-        </style>
+        <link rel="stylesheet" href="css/main.css">
+        
       
     </head>
     <body>
@@ -113,7 +34,7 @@
             
 
                 <% if (typeof user === "undefined") { %>
-                    Please log in
+                    <a href="/login">Click here to log in</a>
                 <% } else { %>
                     Welcome, <%= user.email %> 
                 <% } %>

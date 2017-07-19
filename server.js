@@ -12,10 +12,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./config/database.js');
+//var configDB = require('./config/database.js');
 
-//mongoose.connect(process.env.CONFIGDB); // connect to our database
-mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(process.env.CONFIGDB); // connect to our database
+//mongoose.connect(configDB.url); // connect to our database
 
 mongoose.connection.once("open", function() {
     console.log("db connected!");
@@ -39,7 +39,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use("/img", express.static(path.join(__dirname, "views/img")));
-
+app.use("/css", express.static(path.join(__dirname, "views/css")));
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 
