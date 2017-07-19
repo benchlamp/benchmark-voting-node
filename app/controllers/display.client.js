@@ -42,6 +42,9 @@ $(document).ready(function() {
         plotShadow: false,
         backgroundColor: "#f7f9f8"
     };
+    var credits = {
+        enabled: false    
+    };
     var title = {
         text: data.name,
         style: {
@@ -73,6 +76,7 @@ $(document).ready(function() {
     
     var json = {};
     json.chart = chart;
+    json.credits = credits;
     json.title = title;
     json.tooltip = tooltip;
     json.series = series;

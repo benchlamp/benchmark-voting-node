@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>        
         <script src="https://code.highcharts.com/highcharts.js"></script>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <style>
           
@@ -20,6 +21,7 @@
           
 
           .navbar {
+            position: relative;
             margin-bottom: 0;
             background-color: #00cca3;
             border: none;
@@ -49,7 +51,7 @@
           
           .create,
           .create > a > .btn {
-            text-align: center;
+            text-align: right;
             background-color: #003329;
             color: white;
             padding: 5px;
@@ -65,6 +67,25 @@
             margin: 10px auto;
           }
           
+          
+          
+          .fa-github {
+            float: right;
+            color: black;
+            font-size: 26px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2%;
+          }
+          
+          .fa-github:hover {
+            color: orange;
+          }
+          
+          .logout {
+            text-align: right;
+          }
       
           
         </style>
@@ -78,6 +99,10 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Benchmark</a>
+      
+      <a class="btn-social btn-outline" href="https://github.com/benchlamp" title="Visit my Github" target="blank">
+        <i class="fa fa-github"></i>
+      </a>
       </div>
     </div>
 </nav>
