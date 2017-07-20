@@ -28,7 +28,7 @@ $(document).ready(function() {
             var voteResult = voteData[key][voteName];
             
             $("#vote-buttons").append(
-                    "<div id='" + key + "." + voteName + "' class='list-group-item list-group-item-action btn vote-btn'>" + voteName + "</div>"
+                    "<div id='" + key + "." + voteName + "' class='list-group-item list-group-item-action btn vote-btn accent-color text-primary-color'>" + voteName + "</div>"
             );
         });
     })();

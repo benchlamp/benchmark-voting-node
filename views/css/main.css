@@ -1,9 +1,45 @@
  
+          body,
+          .dark-primary-color    { 
+            background: #303F9F; 
+          }
+        
+          .default-primary-color { 
+            background: #3F51B5;
+            }
+            
+          .light-primary-color   {
+            background: #C5CAE9; 
+          }
+          
+          .text-primary-color    { 
+            color: #FFFFFF !important; 
+          }
+          
+          .accent-color          { 
+            background: #00BCD4;
+            }
+            
+          .primary-text-color    {
+            color: #212121;
+            }
+            
+          .secondary-text-color  { 
+            color: #757575;
+            }
+            
+          .divider-color         { 
+            border-color: #BDBDBD;
+            }
+
+         
+ 
+ 
           
           body {
-            background-color: #EBF0ED;
             font-family: 'Hind', sans-serif;
             font-size: 18px;
+            color: #212121;
           }
      
            .container        { 
@@ -14,7 +50,6 @@
           .navbar {
             position: relative;
             margin-bottom: 0;
-            background-color: #00cca3;
             border: none;
             border-radius: 0;
           }
@@ -59,14 +94,13 @@
           .create > a > .btn {
             text-align: right;
             font-size: 18px;
-            background-color: #00cca3;
             color: white;
             padding: 5px;
             border: none;
           }
           
           .create > a > .btn:hover {
-            background-color: #216859;
+            background: #00BCD4;
           }
           
           .list-group-item {
@@ -74,13 +108,21 @@
             margin: 10px auto;
           }
           
-          #vote-buttons > .list-group-item {
+          #vote-buttons > .list-group-item,
+          #survey-list > .list-group-item {
+            margin-top: 20px;
             font-size: 18px;
+          }
+          
+          #vote-buttons > .list-group-item:hover,
+          #survey-list > .list-group-item:hover {
+            background: #3F51B5;
+            color: #FFFFFF;
           }
           
           .fa-github {
             float: right;
-            color: black;
+            color: white;
             font-size: 26px;
             position: absolute;
             top: 50%;
@@ -88,8 +130,10 @@
             right: 2%;
           }
           
-          .fa-github:hover {
-            color: orange;
+          .fa-github:hover,
+          .navbar-header > .navbar-brand:hover,
+          .page-header > h4 > a:hover {
+            color: #00BCD4;
           }
           
           .logout {
@@ -99,7 +143,7 @@
 
           .well {
             vertical-align: middle;
-            background-color: #fff;
+            margin: 10px auto;
           }
           .fa-info-circle {
             font-size: 20px;
