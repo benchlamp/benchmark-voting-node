@@ -28,7 +28,20 @@ $(document).ready(function() {
             var voteResult = voteData[key][voteName];
             
             $("#vote-buttons").append(
-                    "<div id='" + key + "." + voteName + "' class='list-group-item list-group-item-action btn vote-btn accent-color text-primary-color'>" + voteName + "</div>"
+                    //"<div id='" + key + "." + voteName + "' class='list-group-item list-group-item-action btn vote-btn accent-color text-primary-color'>" + voteName + "</div>" +
+            
+                    "<div class='custom-button'>" +
+                        "<div class='custom-button-slider'><p>Thank you for voting</p></div>" +
+                        
+                        "<div class='custom-button-option'>" +
+                            "<span class='custom-button-option-name'>" + voteName + "</span>" +
+                        "</div>" +
+                        
+                        "<button class='custom-button-submit vote-btn' id='" + key + "." + voteName + "'>Vote</button>" +
+                    
+                    
+                    "</div>"
+            
             );
         });
     })();
@@ -86,6 +99,11 @@ $(document).ready(function() {
 
     
 //==VOTE FUNCTION===============================================================
+ 
+    $(".custom-button-submit").on("click", function() {
+        $(".custom-button-slider").toggleClass("slide");
+    })
+ 
     
     $(".vote-btn").click(function(event) {
         $.ajax({

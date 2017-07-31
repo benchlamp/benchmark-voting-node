@@ -1,0 +1,213 @@
+@darkPrimaryColor:   #1976D2;
+@primaryColor:       #2196F3;
+@lightPrimaryColor:  #BBDEFB;
+@textPrimaryColor:   #FFFFFF;
+@accentColor:        #CDDC39;
+@primaryTextColor:   #212121;
+@secondaryTextColor: #757575;
+@dividerColor:       #BDBDBD;
+@primaryFontFamily:  'Hind', sans-serif;
+
+
+
+
+.dark-primary-color    { 
+  background: #303F9F; 
+}
+
+.default-primary-color { 
+  background: #3F51B5;
+  }
+  
+.light-primary-color   {
+  background: #C5CAE9; 
+}
+
+.text-primary-color    { 
+  color: #FFFFFF !important; 
+}
+
+.accent-color          { 
+  background: #00BCD4;
+  }
+  
+.primary-text-color    {
+  color: #212121;
+  }
+  
+.secondary-text-color  { 
+  color: #757575;
+  }
+
+
+.divider-color         { 
+  border-color: #BDBDBD;
+  }
+  
+ 
+
+
+body {
+    background-color: #F5F5F5;
+    font--size: 18px;
+}
+
+.navbar-brand,
+footer {
+    font-size: 18px;
+}
+
+.navbar {
+    background-color: @darkPrimaryColor;
+    margin-bottom: 1px;
+}
+
+.navbar-brand,
+.navbar-nav > li > a,
+.navbar-header > button,
+.list-group-item {
+    color: @textPrimaryColor;
+    font-family: @primaryFontFamily;
+}
+
+.navbar-brand:hover {
+    color: @accentColor;
+}
+
+
+.navbar-nav > li > a:hover,
+.navbar-header > button:hover {
+    color: @primaryTextColor;
+    background-color: @accentColor;
+}
+
+
+.page-header {
+    margin-top: 0px;
+    margin-bottom: 1px;
+    border-bottom: none;
+    background-image: url("/img/bgimg.jpg");
+    background-size:100% auto;
+    padding: 10% 20px;
+    text-align: right;
+    
+    h1 {
+        color: @textPrimaryColor;
+        font-size: 60px;
+        font-family: 'Audiowide', cursive !important; 
+    }        
+}
+
+.spacer {
+    height: 30px;
+    background-color: @primaryColor;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+.content-filler {
+    height: 400px;
+    padding-top: 15%;
+}
+
+.list-group-item,
+a.list-group-item {
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    color: @textPrimaryColor;
+    background-color: @darkPrimaryColor;
+    
+    &:hover{
+        background-color: @accentColor;
+        
+    }
+}
+
+.well {
+  background-color: @lightPrimaryColor;
+}
+
+.custom-button {
+  box-sizing: border-box;
+  margin-bottom: 20px !important;
+  position: relative;
+  max-width: 600px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  border: solid 1px @darkPrimaryColor;
+}
+
+.custom-button-slider {
+  position: absolute;
+  background-color: @lightPrimaryColor;
+  color: @primaryColor;
+  width: 0;
+  height: 100%;
+  right: 0;
+  -webkit-transition:1s;
+  transition: linear;
+  line-height: 40px;
+}
+
+  .custom-button-slider p {
+    opacity: 0;
+  }
+
+.custom-button-slider.slide {
+  -webkit-transition:1s;
+  width: 100%;
+}
+
+.custom-button-slider.slide p {
+  -webkit-transition:2s;
+  opacity: 1;
+    color: @textPrimaryColor;
+}
+
+.custom-button-option {
+  height: 100%;
+  margin: auto;
+  display: table;
+  width: 90%;
+  float: left;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+  background-color: white;
+  color: @primaryTextColor;
+}
+
+  .custom-button-option-name {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+.custom-button-submit {
+  float: left;
+  width: 10%;
+  height: 100%;
+  background-color: @primaryColor;
+  color: @textPrimaryColor;
+  font-size: 16px;
+  line-height: 16px;
+  margin: auto;
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.9);
+}
+
+
+footer {
+    height: 30px;
+    background-color: @primaryColor;
+    color: @primaryTextColor !important;
+    text-align: right;
+    line-height: 30px;
+    clear: both;
+
+    .copywrite {
+        padding-top: 6px;
+        padding-right: 10px;
+        color: @textPrimaryColor;
+    }
+}

@@ -86,7 +86,7 @@ module.exports = function(app, passport) {
         });
     });
     
-    app.post("/create", function(req, res) {
+    app.post("/create", isLoggedIn, function(req, res) {
         createSurvey(req.body);
         res.redirect("/surveys");
         
@@ -97,6 +97,13 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect("/");
     })
+    
+    
+    //TEMPLATE====================================
+    app.get("/template", function(req, res) {
+        res.render("template.ejs")
+    })
+    
 };
 
 

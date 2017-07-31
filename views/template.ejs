@@ -12,7 +12,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/main.css">    
+        <link rel="stylesheet" href="css/template.css">    
     </head>
     <body>
       
@@ -27,7 +27,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="glyphicon glyphicon-menu-hamburger" ></span>
               </button>
-              <a class="navbar-brand" href="/">Benchmark Voting App</a>
+              <a class="navbar-brand" href="#">Benchmark Voting App</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
@@ -75,3 +75,62 @@
         
         
         <div class="spacer"></div>
+        
+        <!--CONTENT BEGINS -------------------------------------------->
+        
+        
+        <div class="content-filler">
+            
+          <div class="custom-button">
+            <div class="custom-button-slider"><p>Thank you for voting</p></div>
+              <div class="custom-button-option">
+                <span class="custom-button-option-name">Voting Option 1</span>   
+              </div>
+              <button class="custom-button-submit">
+                Vote
+              </button>
+          </div>
+           
+          <div class="custom-button">
+            <div class="custom-button-slider"><p>Thank you for voting</p></div>
+              <div class="custom-button-option">
+                <span class="custom-button-option-name">Voting Option 2</span>   
+              </div>
+              <button class="custom-button-submit">
+                Vote
+              </button>
+          </div>
+          
+          <div class="custom-button">
+            <div class="custom-button-slider"><p>Thank you for voting</p></div>
+              <div class="custom-button-option">
+                <span class="custom-button-option-name">Voting Option 3</span>   
+              </div>
+              <button class="custom-button-submit">
+                Vote
+              </button>
+          </div>
+          
+        </div>
+        
+        
+        <!-- END CONTENT ---------------------------------------------->
+                
+                
+        <footer>
+            
+            <span class="copywrite">© 2017</span>
+            
+        </footer>        
+                
+ 
+     </div><!--END OUTER CONTAINER-->
+     
+     <script type="text/javascript">
+      $(".custom-button-submit").on("click", function() {
+        $(".custom-button-slider").toggleClass("slide");
+      })
+     </script>
+     
+    </body>
+</html>

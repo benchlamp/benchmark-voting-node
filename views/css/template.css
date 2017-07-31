@@ -85,9 +85,6 @@ a.list-group-item {
 a.list-group-item:hover {
   background-color: #CDDC39;
 }
-.well {
-  background-color: #BBDEFB;
-}
 .custom-button {
   box-sizing: border-box;
   margin-bottom: 20px !important;
@@ -101,7 +98,7 @@ a.list-group-item:hover {
 }
 .custom-button-slider {
   position: absolute;
-  background-color: #BBDEFB;
+  background-color: #2196F3;
   color: #2196F3;
   width: 0;
   height: 100%;
