@@ -31,7 +31,7 @@ $(document).ready(function() {
                     //"<div id='" + key + "." + voteName + "' class='list-group-item list-group-item-action btn vote-btn accent-color text-primary-color'>" + voteName + "</div>" +
             
                     "<div class='custom-button'>" +
-                        "<div class='custom-button-slider'><p>Thank you for voting</p></div>" +
+                        "<div class='custom-button-slider'></div>" +
                         
                         "<div class='custom-button-option'>" +
                             "<span class='custom-button-option-name'>" + voteName + "</span>" +
@@ -102,6 +102,7 @@ $(document).ready(function() {
  
     $(".custom-button-submit").on("click", function() {
         $(".custom-button-slider").toggleClass("slide");
+        $(".flip-container").addClass("flip");
     })
  
     

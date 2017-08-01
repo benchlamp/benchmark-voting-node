@@ -63,6 +63,7 @@ footer {
 }
 
 .navbar-brand,
+.navbar-nav > li,
 .navbar-nav > li > a,
 .navbar-header > button,
 .list-group-item {
@@ -129,6 +130,45 @@ a.list-group-item {
   background-color: @lightPrimaryColor;
 }
 
+
+.flip-container {
+  perspective: 1000px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flipper {
+  transition: 0.5s;
+  transform-style: preserve-3d; 
+  position: relative;
+}
+
+.flip-container, .front, .back {
+	width: 100%;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+
 .custom-button {
   box-sizing: border-box;
   margin-bottom: 20px !important;
@@ -172,7 +212,7 @@ a.list-group-item {
   height: 100%;
   margin: auto;
   display: table;
-  width: 90%;
+  width: 80%;
   float: left;
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
   background-color: white;
@@ -186,7 +226,7 @@ a.list-group-item {
 
 .custom-button-submit {
   float: left;
-  width: 10%;
+  width: 20%;
   height: 100%;
   background-color: @primaryColor;
   color: @textPrimaryColor;
@@ -194,6 +234,7 @@ a.list-group-item {
   line-height: 16px;
   margin: auto;
   box-shadow: inset 0px 0px 15px rgba(0,0,0,0.9);
+  outline: 0;
 }
 
 

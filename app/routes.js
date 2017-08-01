@@ -2,6 +2,7 @@
 var createSurvey = require("../config/createSurvey.js");
 var listSurveys = require("../config/listSurveys.js");
 var displaySurvey = require("../config/displaySurvey.js");
+var displayProfile = require("../config/displayProfile.js");
 var vote = require("../config/vote.js");
 module.exports = function(app, passport) {
     
@@ -44,11 +45,11 @@ module.exports = function(app, passport) {
         listSurveys(function(data) {
             res.render("surveys.ejs", {
                 user: req.user,
-                data: JSON.stringify(data)
+                data: JSON.stringify(data),
+                message: req.flash("loginMessage")
             });                
             
         });
-
     });
     
     
@@ -71,10 +72,6 @@ module.exports = function(app, passport) {
                 res.json(response);                
             }
         }) 
-        
-
-
-
     })
     
     
@@ -87,10 +84,28 @@ module.exports = function(app, passport) {
     });
     
     app.post("/create", isLoggedIn, function(req, res) {
-        createSurvey(req.body);
+        createSurvey(req.body, req.user);
         res.redirect("/surveys");
+
+    })
+    
+    
+    //PROFILE=====================================
+    app.get("/profile", isLoggedIn, function(req, res) {
+        console.log("routing user " + req.user.id + " to profile page");
+        //display profile & user's surveys
+        displayProfile(req.user, function(data) {
+            res.render("profile.ejs", {
+                user: req.user,
+                data: JSON.stringify(data)                
+            })
+        })
+        
+
         
     })
+    
+    
     
     //LOGOUT======================================
     app.get("/logout", function(req, res) {
@@ -112,5 +127,7 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
+    console.log(req.flash)
+    req.flash("loginMessage", "Please log in")
     res.redirect("/");
 }

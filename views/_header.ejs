@@ -42,14 +42,15 @@
               <ul class="nav navbar-nav navbar-right">
                   
                 <!-- IF LOGGED IN --------------------------------------------->
-                
-                <!-- Welcome, user -------------------------------------------->
-                
+                <% if (typeof user !== "undefined") { %>
+                  <li><a href="/profile">Welcome, <%= user.email %></a></li>
+                  <li><a href="/logout">Logout</a></li                  
+               <% } else { %> 
                 <!-- ELSE ----------------------------------------------------->
                 <li><a href="/signup"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
                 <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <!------------------------------------------------------------->
-                
+                <% } %>
               </ul>
             </div>
           </div>
@@ -63,13 +64,7 @@
         <div class="page-header">
             <h1>Voting App</h1>
             
-        
-        <!-- WELCOME USER / LOGIN PROMPT -->
-            <% if (typeof user === "undefined") { %>
-                <h4>Please sign in.</h4>
-            <% } else { %>
-                <h4 class="user">Welcome, <%= user.email %></h4>
-            <% } %>        
+      
             
         </div><!--END PAGE HEADER-->
         

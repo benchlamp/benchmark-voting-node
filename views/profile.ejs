@@ -1,0 +1,18 @@
+<% include _header %>
+
+
+<div class="col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+    <h4 class="user">Hi <%= user.email %>, welcome to your profile page.</h4>
+
+     <div class="list-group" id="survey-list"></div>
+    
+    <hr class="divider-color"/>
+    
+</div>
+
+<script>
+    var data = <%- data %>;
+</script>   
+<script type="text/javascript" src="controllers/profile.client.js"></script>
+
+<% include _footer %>

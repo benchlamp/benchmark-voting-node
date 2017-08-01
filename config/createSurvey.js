@@ -1,9 +1,11 @@
 var Survey = require("../app/models/survey");
 
 
-module.exports = function(body) {
+module.exports = function(body, user) {
     
-
+    //console.log(user.id);
+    
+    
     var keys = Object.keys(body);
     var data = [];
     
@@ -17,13 +19,14 @@ module.exports = function(body) {
     
     var newSurvey = new Survey({
         name: body.name,
-        data: data
+        data: data,
+        user: user.id
     })
 
     return newSurvey.save(function(err, newSurvey) {
         if (err) console.error(err);
     })
 
-
+    
 }
 

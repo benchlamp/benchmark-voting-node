@@ -2,6 +2,11 @@
 
     <div class="col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
 
+        <!-- display any authentication messages -->
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><strong><%= message %></strong></div>
+        <% } %>
+
         <div class="well light-primary-color">
             <p>Hello and welcome to my voting app.</p> 
             <p>This was built on a modified clemintine.js template, with node / express for the backend, mongoDB / mongoose for database, passport / bcrypt-nodejs for user control and ejs as the view engine.</p>
