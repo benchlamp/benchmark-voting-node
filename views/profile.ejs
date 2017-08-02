@@ -1,9 +1,13 @@
 <% include _header %>
 
+ 
 
-<div class="col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+<div class="col-sm-12 col-md-10 col-md-offset-1">
     
-    <div class="well">Hi <%= user.email %>, welcome to your profile page.</div>
+    <div class="well">
+        <h4>Hi <%= user.email %>, welcome to your profile page.</h4>
+        <div id="profile-survey-list-intro"></div>
+    </div>
 
      <div class="list-group" id="survey-list"></div>
     
@@ -13,7 +17,7 @@
 
 <script>
     var data = <%- data %>;
-</script>   
+</script>  
 <script type="text/javascript" src="controllers/profile.client.js"></script>
 
 <% include _footer %>
