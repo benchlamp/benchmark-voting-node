@@ -100,12 +100,13 @@ module.exports = function(app, passport) {
                 data: JSON.stringify(data)                
             })
         })
-        
-
-        
     })
     
     
+    app.delete("/profile", isLoggedIn, function(req, res) {
+        console.log("Routing delete request for survey id " + req.body.id)
+        res.send("Routing successful")
+    })
     
     //LOGOUT======================================
     app.get("/logout", function(req, res) {

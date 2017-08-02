@@ -24,10 +24,23 @@ $(document).ready(function() {
     
 
     $(".profile-delete-link").on("click", function(event) {
-      confirm("Are you sure you want to delete survey id " + event.target.id);
+        if (confirm("Are you sure you want to delete this survey?")) {
+            
+           $.ajax({
+               url: "/profile",
+               type: "DELETE",
+               data: {
+                   id: event.target.id
+               },
+               success: function(response) {
+                   console.log(response);
+               }
+           }) 
+            
+        }
     })
     
+    
 })
-
 
 
