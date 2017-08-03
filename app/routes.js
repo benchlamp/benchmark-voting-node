@@ -3,6 +3,7 @@ var createSurvey = require("../config/createSurvey.js");
 var listSurveys = require("../config/listSurveys.js");
 var displaySurvey = require("../config/displaySurvey.js");
 var displayProfile = require("../config/displayProfile.js");
+var deleteSurvey = require("../config/deleteSurvey.js");
 var vote = require("../config/vote.js");
 module.exports = function(app, passport) {
     
@@ -105,8 +106,12 @@ module.exports = function(app, passport) {
     
     app.delete("/profile", isLoggedIn, function(req, res) {
         console.log("Routing delete request for survey id " + req.body.id)
-        res.send("Routing successful")
+        //res.send("Routing successful")
+        deleteSurvey(req.body.id, req.user, function(response) {
+            if (response) res.json(response);
+        })
     })
+    
     
     //LOGOUT======================================
     app.get("/logout", function(req, res) {
