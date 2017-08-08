@@ -25,9 +25,17 @@
     
 
 
-    <hr class="divider-color"/>
 
 
+    <% if (typeof user !== "undefined") { %>
+      <div class="btn btn-default btn-md" id="add-option">Add an option</div>
+      <hr class="divider-color"/>
+      <a class="twitter-share-button" href="https://twitter.com/intent/tweet">
+        Tweet
+      </a>
+    <% } else { %>
+      <hr class="divider-color"/>
+      <% } %>
     </div>
 
     
